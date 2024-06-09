@@ -3,9 +3,9 @@ function TodoItem() {
     let todoName2 = "Go to College";
     let todoDate = "4/10/2023";
     return (
-        <div className="container text-center">
+        <div className="container items-container">
 
-            <div className="row">
+            <div className="row ss-row">
                 <div className="col-6">
                     {todoName1}
                 </div>
@@ -13,12 +13,12 @@ function TodoItem() {
                     {todoDate}
                 </div>
                 <div className="col-2">
-                    <button type="button" className="btn btn-danger">
+                    <button type="button" className="btn btn-danger ss-button">
                         Delete
                     </button>
                 </div>
             </div>
-            <div className="row">
+            <div className="row ss-row">
                 <div className="col-6">
                     {todoName2}
                 </div>
@@ -26,7 +26,7 @@ function TodoItem() {
                     {todoDate}
                 </div>
                 <div className="col-2">
-                    <button type="button" className="btn btn-danger">
+                    <button type="button" className="btn btn-danger ss-button">
                         Delete
                     </button>
                 </div>
