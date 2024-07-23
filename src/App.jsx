@@ -8,12 +8,16 @@ function App() {
   const onNewItem = (todoName,dueDate) => {
     setTodoItems([...todoItems,{name : todoName, date : dueDate}])
   }
+  const handleDeleteItem = (todoItem) => {
+    const newTodoItems = todoItems.filter((item) => { return item.name !== todoItem});
+    setTodoItems(newTodoItems);
+  }
   return (
     <>
       <center className='todo-container'>
           <AppName />
           <AddTodo onNewItem={onNewItem} />
-          <TodoItems todoItems={todoItems}/>
+          <TodoItems todoItems={todoItems} onDeleteClick={handleDeleteItem}/>
       </center>
     </>
   )
