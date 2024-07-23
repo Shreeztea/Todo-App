@@ -1,13 +1,15 @@
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import { IoMdAdd } from "react-icons/io";
+import { TodoItemsContext } from "../store/todo-items-store";
 
-function AddTodo({onNewItem}) {
+function AddTodo() {
+    const { addNewItem } = useContext(TodoItemsContext);
     const todoName = useRef();
     const dueDate = useRef();
     const handleAddButtonClicked = (event) => {
         event.preventDefault();
         if(todoName.current.value != '') {
-            onNewItem(todoName.current.value,dueDate.current.value)
+            addNewItem(todoName.current.value,dueDate.current.value)
         }
         todoName.current.value = "";
         dueDate.current.value = "";
